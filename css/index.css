@@ -1,0 +1,23 @@
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:300');
+
+body{
+    font-family: 'Roboto', sans-serif !important;
+}
+
+.jumbotron{
+    background-color: #e61c5d !important;
+    color: white !important;
+}
+
+.introtext{
+    margin-top: 70px;
+}
+
+.signup{
+    cursor: pointer;
+}
+
+.submit{
+  margin-top: 12px;
+}

@@ -6,12 +6,28 @@ signupForm.addEventListener('click', (e) => {
 
     let email = document.querySelector('#signup-email').value;
     let password = document.querySelector('#signup-password').value;
+    let confm = document.querySelector('#confm-password').value;
      
-    auth.createUserWithEmailAndPassword(email, password).then(cred => {
-        document.querySelector('#signup-form').reset();
-      
-    });
-    
+            const createUser =()=>{
+                auth.createUserWithEmailAndPassword(email, password).then(cred => {
+                    document.querySelector('#signup-form').reset();
+                
+                }); 
+            } 
+
+            if (password != confm){
+                alert("Passwords dont match!");
+              } else{
+                createUser();
+            }
+
+
+            if (password.length <= 6 || confm.length <= 6){
+                alert('Password is less than 6 characters');
+            }else{
+                createUser();
+            }
+            
 });
 
 

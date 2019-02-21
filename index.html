@@ -7,7 +7,9 @@
     <title>Document</title>
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/css/bootstrap.min.css">
-    
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/js/bootstrap.min.js"></script>
 </head>
 <body>
     
@@ -36,18 +38,18 @@
 
         </div>
         <div class="col-4">
-            <form>
+            <form id="login-form">
                 <div class="email">
                         <label for="exampleInputEmail1">Email address</label>
-                        <input type="text" class="form-control">
+                        <input id="login-email" type="text" class="form-control">
                 </div>
 
                 <div class="password">
                         <label for="exampleInputEmail1">Password</label>
-                        <input type="password" class="form-control">
+                        <input id="login-password" type="password" class="form-control">
                 </div>
-                <div class="submit text-center">
-                    <a href="#" class="btn btn-primary" style="width: 12rem;">Login</a>
+                <div class="login-btn text-center">
+                    <input id="login" type="button" value="Login" class="btn btn-primary" data-dismiss="modal" style="width: 12rem;">
                 </div>
             
             </form>
@@ -76,28 +78,21 @@
                         
                                 </div>
                                 <div class="col-8">
-                                    <form>
-                                        <div class="username">
-                                                <label for="exampleInputEmail1">Username</label>
-                                                <input type="text" class="form-control">
-                                        </div>
-                                        <div class="email">
-                                                <label for="exampleInputEmail1">Email address</label>
-                                                <input type="text" class="form-control">
+                                    <form id="signup-form">
+                                       
+                                        <div class="signup-email">
+                                                <label for="signup-email">Email address</label>
+                                                <input type="text" id="signup-email" class="form-control">
                                         </div>
                         
-                                        <div class="password">
-                                                <label for="exampleInputEmail1">Password</label>
-                                                <input type="password" class="form-control">
-                                        </div>
-                                        <div class="confirm">
-                                                <label for="exampleInputEmail1">Confirm Password</label>
-                                                <input type="password" class="form-control">
-                                        </div>
-                                        <div class="submit text-center">
-                                            <a href="#" class="btn btn-primary" style="width: 12rem;">Signup</a>
+                                        <div class="signup-password">
+                                                <label for="signup-password">Password</label>
+                                                <input type="password" id="signup-password" class="form-control">
                                         </div>
                                     
+                                        <div class="signup-btn text-center">
+                                            <input id="submit" type="button" value="Signup" class="btn btn-primary" data-dismiss="modal" style="width: 12rem;">
+                                        </div>
                                     </form>
                                     
                             </div>
@@ -111,17 +106,42 @@
           </div>
         </div>
       </div>
+ 
 
 
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" ></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/js/bootstrap.min.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.7.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.7.2/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.7.2/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
+<script src ="js/auth.js"></script>
+<script src="js/index.js"></script>
 
 <script>
 
 $('#myModal').on('shown.bs.modal', function () {
   $('#myInput').trigger('focus')
 })
+
+// Initialize Firebase
+var config = {
+    apiKey: "AIzaSyBvXIQ0VTgEG5C9hSMkg5ujlqPFRtkaF5g",
+    authDomain: "cook-3209f.firebaseapp.com",
+    databaseURL: "https://cook-3209f.firebaseio.com",
+    projectId: "cook-3209f",
+    storageBucket: "cook-3209f.appspot.com",
+    messagingSenderId: "222354745710"
+  };
+  firebase.initializeApp(config);
+
+//Firebase references
+const auth = firebase.auth();
+  const db = firebase.firestore();
+
+
+
+  // New:
+  //const timestamp = snapshot.get('created_at');
+  //const date = timestamp.toDate();
 </script>
 </body>
 </html>

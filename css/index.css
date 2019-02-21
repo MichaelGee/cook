@@ -14,10 +14,19 @@ body{
     margin-top: 70px;
 }
 
+.login-btn{
+    cursor: pointer;
+    margin-top: 12px;
+}
+
 .signup{
     cursor: pointer;
 }
-
-.submit{
+.signup-btn{
   margin-top: 12px;
+  cursor: pointer;
+}
+
+#submit{
+    cursor: pointer;
 }

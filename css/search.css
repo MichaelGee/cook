@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300');
+
+body{
+    font-family: 'Roboto', sans-serif !important;
+}
+nav{
+    background-color: #e61c5d !important;
+}
+.navbar-brand{
+    color: white !important;
+}
+
+.search_bar{
+    margin-top: 20px;
+}
+h1{
+    text-align: center;
+    margin-top: 20px !important;
+}
